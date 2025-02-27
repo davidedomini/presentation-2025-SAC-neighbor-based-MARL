@@ -1,7 +1,7 @@
 #import "@preview/touying:0.5.2": *
 #import themes.metropolis: *
 #import "@preview/fontawesome:0.1.0": *
-#import "@preview/ctheorems:1.1.2": *
+// #import "@preview/ctheorems:1.1.2": *
 #import "@preview/numbly:0.1.0": numbly
 
 // Pdfpc configuration
@@ -23,17 +23,17 @@
   )
 
 // Theorems configuration by ctheorems
-#show: thmrules.with(qed-symbol: $square$)
-#let theorem = thmbox("theorem", "Theorem", fill: rgb("#eeffee"))
-#let corollary = thmplain(
-  "corollary",
-  "Corollary",
-  base: "theorem",
-  titlefmt: strong
-)
-#let definition = thmbox("definition", "Definition", inset: (x: 1.2em, top: 1em))
-#let example = thmplain("example", "Example").with(numbering: none)
-#let proof = thmproof("proof", "Proof")
+// #show: thmrules.with(qed-symbol: $square$)
+// #let theorem = thmbox("theorem", "Theorem", fill: rgb("#eeffee"))
+// #let corollary = thmplain(
+//   "corollary",
+//   "Corollary",
+//   base: "theorem",
+//   titlefmt: strong
+// )
+// #let definition = thmbox("definition", "Definition", inset: (x: 1.2em, top: 1em))
+// #let example = thmplain("example", "Example").with(numbering: none)
+// #let proof = thmproof("proof", "Proof")
 
 #show: metropolis-theme.with(
   aspect-ratio: "16-9",
