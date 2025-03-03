@@ -1,8 +1,8 @@
 @import "reveal-js/dist/theme/template/mixins";
 @import "reveal-js/dist/theme/template/settings";
 
-
 // Include theme-specific fonts
+
 
 // Sans-serif
 // @import url('reveal-js/lib/font/source-sans-pro/source-sans-pro.css');
@@ -27,10 +27,10 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono');
 // @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono');
 
-// $backgroundColor: #fff;
+$backgroundColor: #EFF1ED;
 
-// $mainColor: #000;
-// $headingColor: #111;
+$mainColor: #222;
+$headingColor: #222;
 
 $mainFontSize: 2em;
 // $mainFont: 'Roboto', sans-serif;
@@ -49,8 +49,6 @@ $headingFontWeight: 600;
 $linkColor: #2690e7;
 $linkColorHover: lighten( $linkColor, 25% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
-$detailBackgroundColor: #dae5e9;
-$logo: url("../example-background-neg.svg");
 
 $heading1Size: 2.5em;
 $heading2Size: 1.6em;
@@ -60,13 +58,21 @@ $heading4Size: 1.0em;
 @import "reveal-js/dist/theme/template/theme";
 
 section.has-light-background {
-	$detailBackgroundColor: #bd2b0b !global;
-	$logo: url("../example-background.svg") !global;
-
 	&, h1, h2, h3, h4, h5, h6 {
-		color: #222;
+		color: #22373b;
 	}
+	color: #22373b;
 }
+
+.custom.back {
+    background-color: #EFF1ED; /* Colore iniziale */
+    transition: color 0.5s ease;
+}
+
+.reveal .fragment.visible.custom.back {
+    background-color: #d1ccdc !important; /* Cambiamento del colore quando visibile */
+}
+
 .reveal pre {
 	margin: 1em auto;
 }
@@ -74,12 +80,16 @@ section.has-light-background {
 .reveal strong,
 .reveal b {
 	font-weight: bold;
-	color: #b81f0b
 }
 
 .reveal em {
 	font-style: italic;
-	color: #039418
+	color: #26736aff;
+
+}
+
+.reveal h4 {
+	text-transform: none;
 }
 
 .reveal section img {
@@ -91,43 +101,33 @@ section.has-light-background {
 	object-fit: contain;
 }
 
+.reveal table, td, th {
+	border-collapse: collapse !important; /* Unisce i bordi */
+}
+
+.reveal table, th, td, thead, tbody {
+	border: 2px solid black !important; /* Spessore e colore del bordo */
+}
+
 .reveal code {
-	color: rgb(209, 28, 124);
+	//color: rgb(209, 28, 124);
 	font-family: "JetBrains Mono", "Oxygen Mono", "Roboto Mono", "Ubuntu Mono", "Courier New", Courier, monospace;
-	font-weight: bold;
+	font-weight: normal;
+	line-height: normal;
+	font-size: larger;
 }
 
 .reveal pre code {
 	color: black;
-}
-
-// HEADERS
-
-.reveal h1 {
-	text-transform: none;
-}
-
-.reveal h2 {
-	text-transform: none;
+	background-color: #ffffff;
 }
 
 .reveal h3 {
-	text-transform: none;
 	margin: .5em 0 0;
 }
 
-.reveal h4 {
-	text-transform: none;
-}
-
-// LISTS
-
 .reveal ul {
 	margin: .2em .2em .2em;
-}
-
-.reveal li li {
-	font-size: 80%;
 }
 
 .gist-it-gist .gist-file .gist-data pre, .gister-gist .gist-file .gist-data pre {
@@ -137,18 +137,18 @@ section.has-light-background {
 // Nice blockquote and cite
 
 .reveal blockquote {
-	width:90%;
+	//width:90%;
 	margin:0.3em auto;
 	font-family: 'Satisfy';
 	font-style: normal;
 	font-size: 1.2em;
 	color: #333333;
 	padding:0.1em 0.1em 0.1em 0.1em;
-	border-color: #039418;
+	border-color: #26736aff;
 	border-style: solid;
 	border-width: 0.1em;
 	border-radius: 1em;
-	border-left:0.7em solid #039418 ;
+	border-left:0.7em solid #26736aff ;
 	line-height: 1.2em;
 	position: relative;
 	background:#EDEDED;
@@ -158,7 +158,7 @@ section.has-light-background {
 .reveal blockquote::before{
 	font-family:Arial;
 	content: "\201C";
-	color:#039418;
+	color:#26736aff;
 	font-size: 4em;
 	position: absolute;
 	left: 0.05em;
@@ -173,7 +173,7 @@ section.has-light-background {
 .reveal blockquote::after{
 	font-family:Arial;
 	content: "\201D";
-	color:#039418;
+	color:#26736aff;
 	font-size: 4em;
 	position: absolute;
 	bottom: -0.2em;
@@ -192,6 +192,34 @@ section.has-light-background {
 	font-weight: bolder;
 	font-family: 'Cinzel';
 	font-size: 0.7em;
+}
+
+// .reveal .slide-background:after {
+// 	content: "Domini et. al - A Reusable Simulation Pipeline for Many-Agent Reinforcement Learning - DSRT 2024";
+// 	position: absolute;
+// 	bottom: 2.5%;
+// 	right: 6%;
+// 	z-index: -1;
+// 	color: $linkColor;
+// 	font-size: .5em;
+// }	
+
+$logo: url("../footer-uni.svg");
+
+section.has-light-background {
+ 	$detailBackgroundColor: red !global;
+}
+
+.reveal .slide-background {
+	background-color: $backgroundColor;
+	background-image: $logo;
+	background-repeat: no-repeat;
+	background-position: 0.45% 99.2%;
+	background-size: 6%;
+	background-clip: border-box;
+	border-radius: 30px 30x;
+	border-style: hidden;
+	border-width: 0.3em 0.3em;
 }
 
 .gist-it-gist .gist-file .gist-data pre, .gister-gist .gist-file .gist-data pre {
@@ -232,8 +260,28 @@ kbd {
   font-weight: normal;
 }
 
+.multiCol {
+	display: flex;
+	align-items: center;
+	vertical-align: baseline;
+	text-align: left;
+	width: 100%;
+}
+
+.col-25 {
+	width: 25%;
+}
+
+.col-50 {
+	width: 50%;
+}
+
+.col-75 {
+	width: 75%;
+}
+
 .green {
-	color: rgb(0, 255, 0);
+	color: green;
 }
 
 .red {
@@ -253,104 +301,6 @@ kbd {
 	justify-content: center;
 }
 
-.reveal .slide-background {
-	background-color: $backgroundColor;
-	background-image: $logo;
-	background-repeat: no-repeat;
-	background-position: 0.45% 99.2%;
-	background-size: 15%;
-	background-clip: border-box;
-	border-radius: 30px;
-	border-style: solid;
-	border-color: $detailBackgroundColor;
-	border-width: 0.3em;
+.reveal .nohighlight {
+	max-height: 100vh;
 }
-
-.reveal .slide-background:after {
-	content: "Authors - Title - Venue Year";
-	position: absolute;
-	bottom: 2.5%;
-	right: 6%;
-	z-index: -1;
-	color: $detailBackgroundColor;
-	font-size: .8em;
-  }
-
-
-  // Multicolumn styling
-
-  .reveal div.col {
-	// draw a red border
-	// border: 1px solid red;
-	text-align: left;
-	border: .2em dashed $detailBackgroundColor;
-	border-style: double;
-	border-radius: 1em;
-	padding: 0.5em;
-}
-
-.reveal div.container {
-	// border: 1px solid red;
-	align-self: center;
-	min-width: 90%;
-	margin-right: 5%;
-	margin-left: 5%;
-	margin-top: 1em;
-}
-
-@-webkit-keyframes blur-animation {
-  0% {
-    -webkit-filter: blur(0px) ;
-    -moz-filter: blur(0px);
-    -o-filter: blur(0px);
-    -ms-filter: blur(0px);
-    filter: blur(0px);
-
-  }
-  100% {
-    -webkit-filter: blur(4px) saturate(.5) brightness(.8);
-    -moz-filter: blur(5px) saturate(.7) brightness(.9);
-    -o-filter: blur(5px) saturate(.7) brightness(.9);
-    -ms-filter: blur(5px)saturate(.7) brightness(.9);
-    filter: blur(6px) saturate(1) brightness(.2);
-  }
-}
-
-html.blur-animation .backgrounds {
-   -webkit-animation-name: blur-animation;
-   -webkit-animation-duration: 1s;
-   -webkit-animation-iteration-count: 1;
-   -webkit-animation-direction: alternate;
-   -webkit-animation-timing-function: ease-out;
-   -webkit-animation-fill-mode: forwards;
-   -webkit-animation-delay: 0s;
- }
-
- @-webkit-keyframes blur-animation-light {
-  0% {
-    -webkit-filter: blur(0px) ;
-    -moz-filter: blur(0px);
-    -o-filter: blur(0px);
-    -ms-filter: blur(0px);
-    filter: blur(0px);
-
-  }
-  100% {
-    -webkit-filter: blur(6px) contrast(0.5) saturate(3) brightness(2) contrast(0.5) brightness(1.3) ;
-    -moz-filter: blur(6px) contrast(0.5) saturate(3) brightness(2) contrast(0.5) brightness(1.3) ;
-    -o-filter: blur(6px) contrast(0.5) saturate(3) brightness(2) contrast(0.5) brightness(1.3) ;
-    -ms-filter: blur(6px) contrast(0.5) saturate(3) brightness(2) contrast(0.5) brightness(1.3) ;
-    filter: blur(6px) contrast(0.5) saturate(3) brightness(2) contrast(0.5) brightness(1.3) ;
-  }
-}
-
-html.blur-animation-light .backgrounds {
-	color: #039418;
-   -webkit-animation-name: blur-animation-light;
-   -webkit-animation-duration: 1s;
-   -webkit-animation-iteration-count: 1;
-   -webkit-animation-direction: alternate;
-   -webkit-animation-timing-function: ease-out;
-   -webkit-animation-fill-mode: forwards;
-   -webkit-animation-delay: 0s;
- }

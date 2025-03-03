@@ -1,6 +1,6 @@
-baseURL = "https://danysk.github.io/Template-Hugo-Reveal-Slides"
+baseURL = "https://davidedomini.github.io/presentation-2025-SAC-neighbor-based-MARL"
 languageCode = "en-us"
-title = "A Hugo theme for creating Reveal.js presentations"
+title = "Neighbor-Based Decentralized Training Strategies for Multi-Agent Reinforcement Learning"
 disableKinds = ["sitemap", "RSS"]
 theme = "reveal-hugo"
 publishDir = "build"
@@ -10,7 +10,7 @@ publishDir = "build"
 # uglyURLs = true
 
 [author]
-name = "Danilo Pianini"
+name = "Davide Domini"
 
 # currently only the unsafe mode for goldmark is supported
 [markup.goldmark.renderer]
