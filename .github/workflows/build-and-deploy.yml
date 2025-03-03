@@ -1,0 +1,60 @@
+name: Build and deploy
+
+on:
+  push:
+    tags: '*'
+    branches-ignore:
+      - 'autodelivery**'
+      - 'bump-**'
+      - 'renovate/**'
+    paths-ignore:
+      - 'README.md'
+      - 'CHANGELOG.md'
+      - 'LICENSE'
+      - '.github/workflows/update-hugo.yml'
+  pull_request:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  success:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      # Checkout the repository
+      - name: Checkout
+        uses: danysk/action-checkout@0.2.22
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3.0.0
+        with:
+          hugo-version: 0.145.0
+          extended: true
+      # - name: Start SSH session
+      #   uses: luchihoratiu/debug-via-ssh@main
+      #   with:
+      #     NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
+      #     SSH_PASS: ${{ secrets.SSH_PASS }}
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1.221.0
+        with:
+          working-directory: shared-slides
+      - name: Run the preprocessor
+        run: shared-slides/preprocess.rb
+      - name: Build slides with hugo
+        run: hugo
+      - name: Transform and Inline Mermaid charts
+        uses: cric96/inline-mermaid@1.14.1
+        with:
+          css-file-regex: '^css\\/.*custom.*theme.*\\.css$'
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v8
+      - name: Deploy website
+        if: ${{ github.event_name != 'pull_request' && steps.branch-name.outputs.is_default == 'true' }}
+        uses: JamesIves/github-pages-deploy-action@v4.7.3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: build
