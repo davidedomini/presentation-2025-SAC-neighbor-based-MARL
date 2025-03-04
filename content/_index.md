@@ -77,7 +77,42 @@ ACM Symposium on Applied Computing @ SAC 2025, MLA Track
 
 --- 
 
-# Learning and Execution Schemes
+# Learning and Execution Strategies
+
+<br>
+<br>
+
+{{% multicol %}}
+
+{{% col %}}
+
+<h2> CTDE <h2>
+
+<div style="text-align: center; width: 100%;">
+<img src="CTDE.svg" style="width: 100%" />
+</div>
+
+{{%/ col %}}
+
+<!-- {{% col %}}
+
+<div style="text-align: center; width: 100%;">
+<img src="swarm2.jpg" style="width: 100%" />
+</div>
+
+{{%/ col %}} -->
+
+{{% col %}}
+
+<h2> DTDE <h2>
+<div style="text-align: center; width: 100%;">
+<img src="DTDE.svg" style="width: 100%" />
+</div>
+
+{{%/ col %}}
+
+
+{{%/ multicol %}}
 
 ---
 
