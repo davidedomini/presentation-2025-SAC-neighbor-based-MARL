@@ -69,6 +69,28 @@ ACM Symposium on Applied Computing @ SAC 2025, MLA Track
 
 {{%/ multicol %}}
 
-<!-- <div style="text-align: center; width: 60%;"> -->
 <img src="swarm2.jpg" style="width:50%" />
-<!-- </div> -->
+
+--- 
+
+# MARL Formalization
+
+--- 
+
+# Learning and Execution Schemes
+
+---
+
+# Motivation
+
+--- 
+
+# Neighboring-Based Distributed Learning Strategies
+
+--- 
+
+# Evaluation
+
+--- 
+
+# Conclusion and Future Works
