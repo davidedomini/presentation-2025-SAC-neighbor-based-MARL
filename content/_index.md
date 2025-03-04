@@ -24,3 +24,51 @@ ACM Symposium on Applied Computing @ SAC 2025, MLA Track
 <div style="text-align: center; width: 100%;">
 <img src="disi.svg" style="width: 30%" />
 </div>
+
+
+---
+
+# Multi-Agent Reinforcement Learning
+
+<br>
+
+<div style="text-align: center; width: 100%;">
+<img src="marl.svg" style="width: 75%" />
+</div>
+
+---
+
+# MARL Examples
+
+{{% multicol %}}
+
+{{% col %}}
+
+<div style="text-align: center; width: 100%;">
+<img src="swarm1.jpg" style="width: 100%" />
+</div>
+
+{{%/ col %}}
+
+<!-- {{% col %}}
+
+<div style="text-align: center; width: 100%;">
+<img src="swarm2.jpg" style="width: 100%" />
+</div>
+
+{{%/ col %}} -->
+
+{{% col %}}
+
+<div style="text-align: center; width: 100%;">
+<img src="iov.png" style="width: 100%" />
+</div>
+
+{{%/ col %}}
+
+
+{{%/ multicol %}}
+
+<!-- <div style="text-align: center; width: 60%;"> -->
+<img src="swarm2.jpg" style="width:50%" />
+<!-- </div> -->
