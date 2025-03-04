@@ -65,6 +65,67 @@
 <img src="swarm2.jpg" style="width:50%">
 </section><section>
 <h1 id="marl-formalization">MARL Formalization</h1>
+<br>
+<br>
+<div style="text-align:left;">
+
+
+<span class="fragment ">
+  <ul>
+<li>In this paper, we consider <em>partially observable networked markov decision process</em> <small>[1]</small> as a tuple $(\mathcal{G}, \mathcal{S}, \mathcal{A}, \mathcal{O}, \mathcal{P}, \mathcal{R}, \gamma)$</li>
+</ul>
+<!-- - *SwarMDP* is an extension of the classical *Markov Decision Process* (MDP) model, suitable for Many-Agent RL -->
+
+</span>
+
+<!-- 
+
+<span class='fragment ' >
+  <ul>
+<li>Formally, a SwarMDP is a tuple of a <em>swarming agent $\mathbb{A}$</em> and an <em>environment $\mathcal{E}$</em></li>
+</ul>
+
+</span>
+ -->
+
+
+<span class="fragment ">
+  <ul>
+<li>Where:
+<ul>
+<li>$\mathcal{G} = (N, E)$ is a <em>communication graph</em>, where $N$ is the set of $n$ <em>agents</em> and $E \subseteq N \times N$ represents the <em>communication links</em> between agents. Time-varying graphs $\mathcal{G}_t = (N, E_t)$ can be used to represent communication evolving over time $t$.</li>
+<li>$\mathcal{S}$ is the <em>global state space</em>.</li>
+<li>$\mathcal{A} = \mathcal{A}^1 \times \dots \times \mathcal{A}^n$ is the <em>joint action space</em>, where $\mathcal{A}^i$ is the <em>action space of agent</em> $i$.</li>
+<li>$\mathcal{O} = \mathcal{O}^1 \times \dots \times \mathcal{O}^n$ is the <em>joint observation space</em>, where $\mathcal{O}^i$ is the <em>observation space for agent</em> $i$.</li>
+<li>$\mathcal{P}: \mathcal{S} \times \mathcal{A} \times \mathcal{S} \to [0, 1]$ is the <em>state transition function</em>, describing the probability of transitioning to a new state $s’ \in \mathcal{S}$ given the current state $s \in \mathcal{S}$ and joint action $a \in \mathcal{A}$.</li>
+<li>$\mathcal{R} = {\mathcal{R}^i}, {i \in N}$, where $\mathcal{R}^i: \mathcal{S} \times \mathcal{A} \to \mathbb{R}$ is the <em>reward function</em> for agent $i$.</li>
+<li>$\gamma \in [0, 1]$ is the <em>discount factor</em>.</li>
+</ul>
+</li>
+</ul>
+
+</span>
+
+<!-- 
+
+<span class='fragment ' >
+  <ul>
+<li>The environment $\mathcal{E}$ represents the world in which the agent operates, and is defined by:
+<ul>
+<li>$\mathcal{P}$ is the <em>number of agents</em> in the system</li>
+<li>$\mathbb{A}$ is a prototypical agent <em>defining properties</em> common to all agents</li>
+<li>$\mathcal{T}: \mathcal{S^\mathcal{P}} \times \mathcal{A}^\mathcal{P} \times \mathcal{S^\mathcal{P}} \rightarrow \mathbb{R}^\mathcal{P}$ is the <em>global transition function</em>, determining the evolution of the system&rsquo;s state based on the current states and actions of all agents</li>
+<li>$\xi: \mathcal{S^\mathcal{P}} \rightarrow \mathcal{O}^\mathcal{P}$ is a function <em>mapping the state of all agents to the corresponding observations</em> available to each agent</li>
+</ul>
+</li>
+</ul>
+
+</span>
+ -->
+</div>
+<small style="text-align: left; margin-top: 120px;"> 
+[1]  Sachin Adlakha, Sanjay Lall, and Andrea Goldsmith. 2012. Networked Markov Decision Processes With Delays. IEEE Trans. Autom. Control. 57, 4 (2012), 1013–1018.
+</small> 
 </section><section>
 <h1 id="learning-and-execution-strategies">Learning and Execution Strategies</h1>
 <br>
