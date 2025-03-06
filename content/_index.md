@@ -154,6 +154,32 @@ ACM Symposium on Applied Computing @ SAC 2025, MLA Track
 
 # Motivation
 
+<div style="text-align: left";>
+{{% fragment %}}
+- *Key challenge in MARL:* balancing scalability and performance;
+{{%/ fragment %}}
+
+{{% fragment %}}
+- *Limitations of centralized training:* effective but suffers from computational bottlenecks and scalability issues;
+{{%/ fragment %}}
+
+{{% fragment %}}
+- *Limitations of distributed training:* improves scalability but often ignores inter-agent coordination, leading to suboptimal performance;
+{{%/ fragment %}}
+
+{{% fragment %}}
+- *Neighbor-based approaches:* promising in tabular settings but largely unexplored in deep reinforcement learning;
+{{%/ fragment %}}
+
+{{% fragment %}}
+- *Contribution of this work:* integrates deep learning with neighbor-based communication for efficient decentralized learning and coordination;
+{{%/ fragment %}}
+
+{{% fragment %}}
+- *Goal:* achieve both efficient decentralized learning and effective coordination, enabling online adaptation and robust performance in complex multi-agent environments.
+{{%/ fragment %}}
+</div>
+
 --- 
 
 # Neighboring-Based Distributed Learning Strategies
